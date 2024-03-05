@@ -1,22 +1,22 @@
 package model.locs.battleLocs;
 
 import model.Player;
+import model.obstacles.Bear;
 import model.obstacles.Obstacle;
+import model.obstacles.Snake;
 import model.obstacles.Vampire;
-import model.obstacles.Zombie;
 
-public class Forest extends BattleLocation {
+public class Mine extends BattleLocation {
     private static boolean isCompleted = false;
 
-
-    public Forest(Player player) {
-        super(2, player, "Orman", new Vampire(), "Odun", 3);
+    public Mine(Player player) {
+        super(4, player, "Maden", new Snake(), "Eşya", 5);
     }
 
     @Override
     public boolean onLocation() {
         if (isCompleted) {
-            System.out.println("Orman artık tehlikesiz, başka bir yere gitmelisiniz.");
+            System.out.println("Maden artık tehlikesiz, başka bir yere gitmelisiniz.");
             System.out.println();
             return true;
         }
@@ -26,6 +26,6 @@ public class Forest extends BattleLocation {
     @Override
     public void winLocShow() {
         super.winLocShow(); // Override edilen metodu çağırarak önceki işlemlerin yapılmasını sağlıyoruz
-        isCompleted = true; // Orman temizlendiğinde değişkeni true yaparak işaretliyoruz
+        isCompleted = true; // Maden temizlendiğinde değişkeni true yaparak işaretliyoruz
     }
 }

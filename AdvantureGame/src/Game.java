@@ -6,6 +6,7 @@ import model.chars.Samurai;
 import model.locs.Location;
 import model.locs.battleLocs.Cave;
 import model.locs.battleLocs.Forest;
+import model.locs.battleLocs.Mine;
 import model.locs.battleLocs.River;
 import model.locs.normLocs.SafeHouse;
 import model.locs.normLocs.ToolStore;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Game {
-    protected static Scanner input = new Scanner(System.in);
+    protected Scanner input = new Scanner(System.in);
 
     public void start() {
         System.out.println("+----------------------------+");
@@ -29,7 +30,6 @@ public class Game {
         System.out.println(player.getName() + "  Karanlık ve sisli yolculuğa ilk adımınızı attınız tebrikler !");
         System.out.println();
 
-        System.out.println("Şimdi Bir karakter seçin :");
         player = selectChar(player);
         System.out.println();
 
@@ -39,6 +39,7 @@ public class Game {
     }
 
     Player selectChar(Player player) {
+        System.out.println("Şimdi Bir karakter seçin :");
         List<GameChar> charList = new ArrayList<>();
         charList.add(new Archer());
         charList.add(new Knight());
@@ -66,11 +67,12 @@ public class Game {
             System.out.println("+#####\t BÖLGELER    \t#####+");
             System.out.println("+-----\t    \t       \t-----+");
 
-            System.out.println("1- Güvenli Ev --> Düşman yok.");
-            System.out.println("2- ToolStore --> Silah ve zırh satın alabilirsiniz.");
-            System.out.println("3- Mağara --> Burada usanmaz uslanmaz zombiler var Dikkatli ol..");
-            System.out.println("4- Orman --> Buradaki hayvanlar biraz fazla vahşi.Ayının nereden çıkacağı belli olmaz!");
-            System.out.println("5- Nehir --> Buradaki kadim yaratıklar fokurdayan kanına bayılacak, Vampirrrrrrr  ahaaaaahğa!!!");
+            System.out.println("1- Güvenli Ev --> Düşman yok. Canını fulle ve Envanterini kullan.");
+            System.out.println("2- ToolStore --> Silah ve zırh satın alabilirsin.");
+            System.out.println("3- Mağara --> Burada bıkmaz usanmaz zombiler var Dikkatli ol.. -Su");
+            System.out.println("4- Orman --> Buradaki hayvanlar biraz fazla vahşi.Ayının nereden çıkacağı belli olmaz!  -Odun");
+            System.out.println("5- Nehir --> Buradaki kadim yaratıklar fokurdayan kanına bayılacak, Vampirrrrrrr  ahaaaaahğa!!!  -Yemek");
+            System.out.println("6- Maden --> Ssss ssss Zehirli yılanlara var burda -Rasgele Eşya");
             System.out.println("0- Çıkış --> ");
             System.out.println();
 
@@ -96,6 +98,9 @@ public class Game {
                     break;
                 case 5:
                     location = new River(player);
+                    break;
+                case 6:
+                    location = new Mine(player);
                     break;
                 default:
                     System.out.println("Geçerli bir bölge seçin");

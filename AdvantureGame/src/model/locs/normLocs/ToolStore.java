@@ -8,7 +8,7 @@ import model.store.Weapon;
 public class ToolStore extends NormLocation {
 
     public ToolStore(Player player) {
-        super(player, "Mağaza");
+        super(6, player, "Mağaza");
     }
 
     @Override
@@ -132,7 +132,7 @@ public class ToolStore extends NormLocation {
             if (this.getPlayer().getInventory().getArmour() == Armour.armours().get(indxArmour)) {
                 System.out.println(Armour.armours().get(indxArmour).getName() + " Bu Zırhı zaten satın aldınız.");
                 System.out.println("Kalan Para : " + this.getPlayer().getGameChar().getMoney());
-                
+
                 return false;
             }
             System.out.println(Armour.armours().get(indxArmour).getName() + " Zırhı satın aldınız.");

@@ -5,8 +5,8 @@ import model.locs.Location;
 
 public abstract class NormLocation extends Location {
 
-    public NormLocation(Player player, String locName) {
-        super(player, locName);
+    public NormLocation(int id, Player player, String locName) {
+        super(id, player, locName);
     }
 
     @Override
