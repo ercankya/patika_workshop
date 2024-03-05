@@ -2,6 +2,9 @@ package model;
 
 import model.chars.GameChar;
 import model.locs.Location;
+import model.store.Item;
+
+import java.util.List;
 
 public class Player {
     private GameChar gameChar;
@@ -19,7 +22,7 @@ public class Player {
     }
 
     public void showPlayerInfo() {
-        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println(
                 this.getGameChar().getCharName() +
                         "\tSilah : " + this.getInventory().getWeapon().getName() +
@@ -28,10 +31,20 @@ public class Player {
                         "\t Bloklama : " + this.getInventory().getArmour().getBlock() +
 
                         "\t Sağlık : " + this.getGameChar().getHealth() +
-                        "\t Para : " + this.gameChar.getMoney()
+                        "\t Para : " + this.getGameChar().getMoney() +
+                        "\t Envanter : " + listItems()
         );
-        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
+    }
+
+    public String listItems() {
+        String str = "";
+        List<Item> items = this.getInventory().getItems();
+        for (Item item : items) {
+            str += item.getName() + ", ";
+        }
+        return str;
     }
 
     public GameChar getGameChar() {
