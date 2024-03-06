@@ -62,12 +62,24 @@ Canavar : Ayı (1-3 Adet)
 Eşya : Su (Water)
 
 
+Maden
+----
+
+Canavar : Yılan (1-5 Adet)
+
+
+Özellik : Savaş + Ganimet
+
+
+Eşya : Envanter
+
+
 Mağaza
 ----
 Özellik : Destekleyici Eşyalar Satın Almak
 
 
-Silah : Tabanca,Kılıç,Tüfek
+Silah : Tabanca,Kılıç,Tüfek,bazuka
 
 
-Zırh : Hafif,Orta,Ağır
+Zırh :Deri,Demir,Titanyum zırh
